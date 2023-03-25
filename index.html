@@ -12,15 +12,16 @@
 <body>
     <div class="login-box">
         <h2>Subscribe</h2>
-        <form>
+        <form autocomplete="off" method="post" name="google-sheet">
           <div class="user-box">
-            <input type="text" name="" required="">
+            <input type="text" name="fullname" required class="form-control">
             <label>Full Name</label>
           </div>
           <div class="user-box">
-            <input type="email" name="" required="">
+            <input type="email" name="emailid" required class="form-control">
             <label>Email Id</label>
           </div>
+          <!--
           <a href="#">
             <span></span>
             <span></span>
@@ -28,7 +29,28 @@
             <span></span>
             Submit
           </a>
+          -->
+          <input type="submit" value="Submit" class="btn btn-primary apply" />
         </form>
       </div>
+
+      <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    >
+    </script>
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzd_tUtE5bOwPymgZuzDB_TDGC5oNifkQd-POiBUW1eyF01vvpjpJESBQ3pXRL-5-BQig/exec'
+      const form = document.forms['google-sheet']
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => console.log('Success!', response))
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
+
 </body>
 </html>
