@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,25 +11,23 @@
 <body>
     <div class="login-box">
         <h2>Subscribe</h2>
-        <form autocomplete="off" method="post" name="google-sheet">
+        <form autocomplete="off" method="post" action="" name="google-sheet">
           <div class="user-box">
-            <input type="text" name="fullname" required class="form-control">
+            <input type="text" name="fullname" required >
             <label>Full Name</label>
           </div>
           <div class="user-box">
-            <input type="email" name="emailid" required class="form-control">
+            <input type="email" name="emailid" required >
             <label>Email Id</label>
           </div>
-          <!--
-          <a href="#">
+          <button type="submit" title="submit">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
             Submit
-          </a>
-          -->
-          <input type="submit" value="Submit" class="btn btn-primary apply" />
+          </button>
+          <!--<input type="submit" value="submit">-->
         </form>
       </div>
 
@@ -41,7 +38,7 @@
     >
     </script>
     <script>
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbzd_tUtE5bOwPymgZuzDB_TDGC5oNifkQd-POiBUW1eyF01vvpjpJESBQ3pXRL-5-BQig/exec'
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzT3-PtBbdHdfq11A7yfRRpK0XrpHDy1jFmLzOOtHi6Zd5WCjn-YAXFwwgzd4NPY3ZvoQ/exec'
       const form = document.forms['google-sheet']
     
       form.addEventListener('submit', e => {
